@@ -1,0 +1,11 @@
+Build verification for Mukuna retro LP v4
+
+- Next.js production build: PASS
+- TypeScript validation: PASS
+- Static page generation: PASS
+- Main route: /
+- Verified date: 2026-07-11
+
+This build includes the v4 visual refinements for the smartphone mockup,
+upward pillar arcs, responsive botanical motifs, compact lower information
+layout, and sticky CTA end-of-page suppression.
