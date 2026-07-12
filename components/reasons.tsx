@@ -43,9 +43,13 @@ export function Reasons() {
             毎日続けたくなる、三つの理由
             <LeafDeco variant="gold-s1" flip className="absolute right-0 top-1/2 h-7 w-7 -translate-y-1/2 sm:h-8 sm:w-8" />
           </h2>
+          <p className="mt-2 font-serif text-[13.5px] font-medium leading-7 tracking-[0.02em] text-clay/80 sm:text-[15px]">
+            <span className="block sm:inline">1杯およそ50円。</span>
+            <span className="block sm:ml-[0.2em] sm:inline">毎日の習慣に、そっと取り入れやすい価格です。</span>
+          </p>
         </Reveal>
 
-        <ul className="mt-6 grid gap-3 md:grid-cols-3 md:gap-4 lg:mt-7 lg:gap-5">
+        <ul className="mt-4 grid gap-3 md:grid-cols-3 md:gap-4 lg:mt-5 lg:gap-5">
           {reasons.map((reason, index) => {
             const Icon = reason.icon
             return (
