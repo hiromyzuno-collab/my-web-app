@@ -1,32 +1,30 @@
 import Image from 'next/image'
 import { Leaf } from './leaf'
-import { LeafMotif } from './leaf-motif'
 import { Reveal } from './reveal'
 
 /**
- * 三本柱（Q7）。
- * - 枠: BaseRETRO準拠のドーム型（天面が丸く、底辺が直線）＋底辺下に植物スワッグ（LeafMotif、大型化）。
- * - 写真: ろみ生成の高解像度版と差し替え予定。現在は旧素材をプレースホルダとして使用。
- *   差し替え先パス: /images/retro-hd/fermentation.png ほか（生成プロンプト.md 参照）
- * - 冒頭に接続文「そのお悩みに、やさしい答えを。」（Q6B とのブリッジ）。
+ * 三本柱。
+ * 新しい高解像度・縁取り済みドーム写真（retro-framed/）を採用。
+ * 画像自体に縁取りと下端の装飾線が焼き込み済みのため、CSS側の枠・葉は追加しない。
+ * 上部の左右葉飾りは大型化（植物モチーフを盛大に、との指示反映）。
  */
 const pillars = [
   {
-    img: '/images/pillar-fermentation.png', // → 生成後: 味噌ペースト高解像度版
+    img: '/images/retro-framed/fermentation-framed-tight.png',
     alt: '木の器に盛られた、金色に熟成した発酵味噌',
     title: '発酵のチカラ',
     body: '素材の旨みを引き出し、食卓になじむ味わいへ。',
     titleClass: 'text-clay-deep',
   },
   {
-    img: '/images/pillar-mucuna.png', // → 生成後: ざるに盛った緑のムクナ豆
-    alt: 'ざるに盛られた、淡い緑色のムクナ豆',
+    img: '/images/retro-framed/mucuna-framed-tight.png',
+    alt: '木の器に盛られた、淡い色合いのムクナ豆',
     title: 'ムクナ豆の個性',
     body: '昔から食べ継がれてきた豆を、毎日の味噌汁へ。',
     titleClass: 'text-green-deep',
   },
   {
-    img: '/images/pillar-itoshima.png', // → 生成後: 海と山の糸島風景
+    img: '/images/retro-framed/itoshima-framed-tight.png',
     alt: '海と緑の山にかこまれた糸島の風景',
     title: '糸島の風景',
     body: '海と山に囲まれた土地の物語を、一杯に込めて。',
@@ -36,10 +34,10 @@ const pillars = [
 
 export function Pillars() {
   return (
-    <section aria-labelledby="pillars-heading" className="paper-section py-14 sm:py-16 lg:py-[76px] overflow-x-clip">
+    <section aria-labelledby="pillars-heading" className="paper-section overflow-x-clip py-16 sm:py-20 lg:py-24">
       <div className="relative mx-auto max-w-[1120px] px-5 sm:px-7 lg:px-8">
-        <Leaf variant="gold" className="absolute -left-1 top-0 h-16 w-12 -rotate-[18deg] opacity-85 sm:h-20 sm:w-16 lg:-left-6" />
-        <Leaf variant="gold" flip className="absolute -right-1 top-0 h-16 w-12 rotate-[18deg] opacity-85 sm:h-20 sm:w-16 lg:-right-6" />
+        <Leaf variant="cream-b" className="absolute -left-6 -top-4 h-28 w-24 -rotate-[16deg] opacity-95 sm:h-36 sm:w-28 lg:-left-10 lg:h-44 lg:w-36" />
+        <Leaf variant="cream-a" flip className="absolute -right-6 -top-4 h-28 w-24 rotate-[16deg] opacity-95 sm:h-36 sm:w-28 lg:-right-10 lg:h-44 lg:w-36" />
 
         <Reveal className="text-center">
           <p className="font-serif text-[15px] tracking-[0.08em] text-ink-soft sm:text-base">そのお悩みに、やさしい答えを。</p>
@@ -53,18 +51,13 @@ export function Pillars() {
           <p className="mt-3 font-sans text-[15px] leading-8 text-ink-soft sm:text-base">三つの個性が、毎日の一杯を少し特別に。</p>
         </Reveal>
 
-        <ul className="mt-11 grid gap-12 sm:mt-12 md:grid-cols-3 md:gap-8 lg:gap-10">
+        <ul className="mt-12 grid gap-14 sm:mt-14 md:grid-cols-3 md:gap-8 lg:gap-10">
           {pillars.map((pillar, index) => (
             <Reveal as="li" key={pillar.title} delay={index * 110} className="group relative flex flex-col items-center text-center">
-              <div className="relative h-[224px] w-[224px] sm:h-[234px] sm:w-[234px] lg:h-[248px] lg:w-[248px]">
-                {/* ドーム型（天面が半円、底辺が直線）: BaseRETROの窓型 */}
-                <div className="relative h-full w-full overflow-hidden rounded-[50%_50%_4%_4%/44%_44%_4%_4%] border border-gold/35 bg-paper-soft shadow-[0_5px_18px_rgba(91,61,30,0.09)] transition-transform duration-500 group-hover:-translate-y-1">
-                  <Image src={pillar.img} alt={pillar.alt} fill sizes="(max-width: 768px) 234px, 248px" className="object-cover transition-transform duration-700 group-hover:scale-[1.018]" />
-                </div>
-                {/* 底辺下の植物スワッグ（大型化: 190x66） */}
-                <LeafMotif className="pointer-events-none absolute -bottom-[25px] left-1/2 z-10 h-[66px] w-[190px] -translate-x-1/2" />
+              <div className="relative w-[272px] transition-transform duration-500 group-hover:-translate-y-1 sm:w-[300px] lg:w-[330px]" style={{ aspectRatio: 1471 / 1206 }}>
+                <Image src={pillar.img} alt={pillar.alt} fill sizes="(max-width: 768px) 300px, 330px" className="object-contain drop-shadow-[0_8px_20px_rgba(91,61,30,0.14)]" />
               </div>
-              <h3 className={`mt-3 font-serif text-xl font-semibold sm:text-[22px] ${pillar.titleClass}`}>{pillar.title}</h3>
+              <h3 className={`mt-2 font-serif text-xl font-semibold sm:text-[22px] ${pillar.titleClass}`}>{pillar.title}</h3>
               <p className="mt-2 max-w-[16.5rem] font-sans text-[15px] leading-[1.85] text-ink-soft sm:text-base">{pillar.body}</p>
             </Reveal>
           ))}

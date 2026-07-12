@@ -124,7 +124,7 @@ export default function LinePage() {
             大地のムクナ　公式LINEページ
           </p>
           <p className="mt-1 text-[9.5px] text-[var(--ink-soft)] opacity-70">
-            © 2025 AKETENO Inc.
+            © 2026 AKETENO Inc.
           </p>
         </div>
       </div>
