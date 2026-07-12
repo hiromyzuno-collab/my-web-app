@@ -20,12 +20,12 @@ export function ConcernBridge() {
         <Reveal className="text-center">
           <h2
             id="concern-heading"
-            className="relative mx-auto max-w-[30rem] px-10 font-serif font-semibold tracking-[0.04em] text-brown-deep"
+            className="relative mx-auto max-w-full px-10 font-serif font-semibold tracking-[0.04em] text-brown-deep lg:w-fit lg:whitespace-nowrap"
             style={{ fontSize: 'clamp(1.45rem, 3vw, 2rem)', lineHeight: 1.5 }}
           >
             <Leaf variant="gold" className="absolute -left-2 top-1/2 h-14 w-11 -translate-y-1/2 rotate-[10deg] sm:h-16 sm:w-13" />
-            <span className="block sm:inline">こんなお悩み、</span>
-            <span className="block sm:inline">ありませんか？</span>
+            <span className="block lg:inline">こんなお悩み、</span>
+            <span className="block lg:ml-[0.15em] lg:inline">ありませんか？</span>
             <Leaf variant="gold" flip className="absolute -right-2 top-1/2 h-14 w-11 -translate-y-1/2 -rotate-[10deg] sm:h-16 sm:w-13" />
           </h2>
         </Reveal>
