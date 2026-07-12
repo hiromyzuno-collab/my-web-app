@@ -1,5 +1,4 @@
 import { ChevronRight } from 'lucide-react'
-import { LINE_ADD_URL } from '@/lib/site'
 
 function LineGlyph({ className = '' }: { className?: string }) {
   return (
@@ -21,9 +20,7 @@ export function LineCta({ size = 'lg', className = '' }: LineCtaProps) {
   const isLg = size === 'lg'
   return (
     <a
-      href={LINE_ADD_URL}
-      target="_blank"
-      rel="noopener noreferrer"
+      href="/line"
       className={`group flex w-full items-center gap-3 rounded-full border border-cta-deep/25 bg-cta text-cta-foreground shadow-[0_3px_0_0_var(--color-cta-deep),0_8px_18px_rgba(50,81,36,0.12)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_2px_0_0_var(--color-cta-deep),0_10px_22px_rgba(50,81,36,0.14)] active:translate-y-[1px] ${
         isLg ? 'min-h-[72px] px-6 py-3 sm:min-h-[78px] sm:px-9' : 'min-h-12 px-5 py-2.5'
       } ${className}`}

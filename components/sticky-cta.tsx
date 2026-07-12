@@ -2,7 +2,6 @@
 
 import { ChevronRight } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { LINE_ADD_URL } from '@/lib/site'
 
 export function StickyCta() {
   const [show, setShow] = useState(false)
@@ -47,9 +46,7 @@ export function StickyCta() {
       aria-hidden={!show}
     >
       <a
-        href={LINE_ADD_URL}
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/line"
         tabIndex={show ? 0 : -1}
         className="group flex min-h-[50px] w-full items-center justify-center gap-2 rounded-xl border border-cta-deep/20 bg-cta px-4 py-3 text-cta-foreground shadow-[0_2px_0_var(--color-cta-deep)]"
       >

@@ -3,9 +3,9 @@ import { ArrowUpRight, Check, Heart, ShieldCheck, Smartphone } from "lucide-reac
 
 import { BrandLogo } from "@/components/brand-logo";
 import { Leaf } from "@/components/leaf";
+import { LINE_ADD_URL } from "@/lib/site";
 
-const LINE_URL = "https://line.me/R/ti/p/@daichi-no-mukuna";
-const QR_IMAGE_PATH = "/images/line-qr-placeholder.png";
+const QR_IMAGE_PATH = "/images/line-qr.png";
 
 export const metadata = {
   title: "大地のムクナ｜LINE友だち追加",
@@ -61,14 +61,14 @@ export default function LinePage() {
 
         <div className="px-5 pb-7 pt-7 text-center sm:px-8 sm:pb-8 sm:pt-9">
           <p className="font-serif text-[13px] font-semibold tracking-[0.14em] text-[#b7663e]">
-            ご関心をお寄せいただき
+            ご関心をお寄せいただき、ありがとうございます。
           </p>
           <h1 className="mt-2 font-serif text-[26px] font-semibold leading-[1.55] tracking-[0.03em] text-brown-deep sm:text-[29px]">
-            ご登録ありがとうございます
+            LINEよりご案内いたします
           </h1>
           <p className="mx-auto mt-3 max-w-[340px] text-[13.5px] leading-7 text-ink-soft sm:text-sm">
-            毎日の食卓にそっと取り入れられる限定レシピ5選を、LINEよりお届けします。
-            下のQRコード、またはボタンからお進みください。
+            限定レシピ5選を、LINEよりお届けします。
+            下のQRコード、またはボタンからご登録ください。
           </p>
 
           <section aria-labelledby="qr-heading" className="mt-7">
@@ -106,7 +106,7 @@ export default function LinePage() {
           </div>
 
           <a
-            href={LINE_URL}
+            href={LINE_ADD_URL}
             className="group flex min-h-14 w-full items-center justify-center gap-2 rounded-full bg-green-deep px-5 py-3.5 text-[15px] font-semibold text-white shadow-[0_7px_18px_rgba(47,96,53,0.25)] transition hover:bg-[#284f2e] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c7774a]"
           >
             <Smartphone className="h-4.5 w-4.5" strokeWidth={1.8} aria-hidden="true" />
@@ -116,6 +116,15 @@ export default function LinePage() {
           <p className="mt-2.5 text-[11px] leading-5 text-brown/60">
             スマートフォンでご覧の方はこちらが便利です
           </p>
+          <a
+            href={LINE_ADD_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-green-deep underline decoration-green/35 underline-offset-4 transition hover:text-[#284f2e]"
+          >
+            PC版LINEで開く方はこちら
+            <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+          </a>
 
           <section aria-labelledby="steps-heading" className="mt-7 rounded-[22px] border border-[#ded0b2] bg-[#f8f0df] px-4 py-5 text-left sm:px-5">
             <div className="flex items-center gap-2 border-b border-[#ded0b2] pb-3">
